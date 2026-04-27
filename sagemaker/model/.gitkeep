@@ -1,8 +1,0 @@
-# Sem stiahni z HuggingFace:
-# https://huggingface.co/Jordo23/vehicle-classifier
-#
-# Súbory:
-# - model.pt (alebo pytorch_model.bin)
-# - class_names.json (alebo labels.txt)
-#
-# Tieto súbory nepushujte na git (sú aj v .gitignore)
