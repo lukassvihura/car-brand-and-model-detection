@@ -4,53 +4,202 @@
   gap: 2rem;
 }
 
-.container h1 {
-  color: var(--accent);
+.titleRow h1 {
   font-size: 2rem;
+  color: var(--text);
 }
 
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  font-weight: 300;
+}
+
+/* Summary cards */
 .summaryCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.card h3 {
+.cardLabel {
+  font-size: 0.7rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
 }
 
-.number {
+.cardValue {
+  font-family: var(--font-display);
   font-size: 2.5rem;
+  font-weight: 700;
   color: var(--accent);
-  font-weight: bold;
+  line-height: 1;
 }
 
-.brand, .model {
-  font-size: 1.5rem;
-  color: var(--accent);
-  font-weight: bold;
+.cardBrand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
-.loading {
-  text-align: center;
-  padding: 2rem;
+/* Chart sections */
+.chartSection {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.chartTitle {
+  font-size: 0.8rem;
   color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.chartWrapper {
+  width: 100%;
+}
+
+/* Custom tooltip */
+.tooltip {
+  background-color: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+}
+
+.tooltipLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.tooltipValue {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* Model list */
+.modelList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--surface2);
+  border-radius: var(--radius);
+}
+
+.modelRank {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  min-width: 2rem;
+}
+
+.modelName {
+  flex: 0 0 200px;
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modelBar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--surface3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.modelFill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.modelCount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+  min-width: 2rem;
+  text-align: right;
+}
+
+/* Loading */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .error {
-  background-color: #8B0000;
-  color: #FFB6C1;
-  padding: 1rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  padding: 1rem 1.25rem;
   border-radius: var(--radius);
+  border-left: 3px solid var(--danger);
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+
+  .modelName {
+    flex: 0 0 120px;
+  }
 }
