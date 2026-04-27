@@ -15,7 +15,7 @@ FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL, "http://localhost:5173"],
+    allow_origins=[FRONTEND_URL, "https://wonderful-stone-048e14f03.7.azurestaticapps.net/detect"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
