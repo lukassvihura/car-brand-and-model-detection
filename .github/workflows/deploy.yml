@@ -19,7 +19,7 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: car-detection-backend
+          app-name: car-detection-api
           publish-profile: ${{ secrets.AZURE_BACKEND_PUBLISH_PROFILE }}
 
   deploy-frontend:
