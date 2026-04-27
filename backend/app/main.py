@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from .db import get_db, Detection, create_tables
-
+from .sagemaker_client import predict as sagemaker_predict
 
 app = FastAPI(title="Car Detection Backend")
 
